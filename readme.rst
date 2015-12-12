@@ -1,29 +1,49 @@
 ###################
-What is CodeIgniter
+Test task
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Application has only one page (welcome page) for direct access. Other pages are available only via POST and return data in JSON.
+This application allows performs main CRUD operation with categories and products of virtual online store.
 
-*******************
-Release Information
-*******************
+******* Categories *******
+/category/create -> add category
+POST data:
+	[name] - category name
+	
+/category/update/{ID} -> update category
+{ID} - category ID
+POST data:
+	[name] - category name
+	
+/category/delete -> delete category
+POST data:
+	[id] - category ID
+	
+/category/get -> get array of all categories (ID, name)
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<http://www.codeigniter.com/download>`_ page.
 
-**************************
-Changelog and New Features
-**************************
+******* Products **********
+/product/create -> add product
+POST data:
+	[title] - product title
+	[cat_id] - category ID
+	[description] - product description
+	
+/product/update/{ID} -> update product
+{ID} - product ID
+POST data:
+	[title] - product title
+	[cat_id] - category ID
+	[description] - product description
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+/product/delete -> delete product
+POST data:
+	[id] - product ID
+	
+/product/get/{ID} -> get array of products
+{ID} - not required param (if ID is empty - all products, else ID - category ID)
+return array of products and link for download products in excel
+	
 
 *******************
 Server Requirements
