@@ -5,29 +5,35 @@ Test task
 Application has only one page (welcome page) for direct access. Other pages are available only via POST and return data in JSON.
 This application allows performs main CRUD operation with categories and products of virtual online store.
 
-******* Categories *******
+Categories
+
 /category/create -> add category
 POST data:
 	[name] - category name
+
 	
 /category/update/{ID} -> update category
 {ID} - category ID
 POST data:
 	[name] - category name
 	
+	
 /category/delete -> delete category
 POST data:
 	[id] - category ID
 	
+	
 /category/get -> get array of all categories (ID, name)
 
 
-******* Products **********
+Products
+
 /product/create -> add product
 POST data:
 	[title] - product title
 	[cat_id] - category ID
 	[description] - product description
+	
 	
 /product/update/{ID} -> update product
 {ID} - product ID
@@ -36,12 +42,16 @@ POST data:
 	[cat_id] - category ID
 	[description] - product description
 
+	
 /product/delete -> delete product
 POST data:
 	[id] - product ID
 	
+	
 /product/get/{ID} -> get array of products
+
 {ID} - not required param (if ID is empty - all products, else ID - category ID)
+
 return array of products and link for download products in excel
 	
 
